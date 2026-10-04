@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Garima 🎂</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#fff0f6,#ffe0ec,#f8d9ff);
+    color:#4a2340;
+    overflow-x:hidden;
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 18px;
+}
+
+.card{
+    width:min(900px,94%);
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(14px);
+    border-radius:30px;
+    padding:40px 25px;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(170,70,120,.18);
+    border:1px solid rgba(255,255,255,.8);
+}
+
+/* OPENING SCREEN */
+#opening{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#ff7eb3,#ff758c,#c77dff);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    transition:1s ease;
+}
+
+#opening h1{
+    font-size:clamp(32px,8vw,65px);
+    margin-bottom:15px;
+    animation:float 3s infinite ease-in-out;
+}
+
+#opening p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.start-btn,
+.main-btn{
+    border:none;
+    padding:15px 28px;
+    border-radius:50px;
+    background:white;
+    color:#d94d82;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.start-btn:hover,
+.main-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.hidden{
+    display:none;
+}
+/* OPENING TEXT */
+
+#openingText{
+    min-height:28px;
+    animation:fadeUp 1.5s ease;
+    letter-spacing:.5px;
+}
+
+#opening h1{
+    text-shadow:0 4px 20px rgba(255,255,255,.35);
+}
+
+.start-btn{
+    animation:buttonGlow 2s infinite;
+}
+
+@keyframes buttonGlow{
+    0%,100%{
+        box-shadow:0 8px 25px rgba(0,0,0,.15);
+    }
+
+    50%{
+        box-shadow:0 8px 35px rgba(255,255,255,.55);
+    }
+}
+/* HERO */
+.hero h1{
+    font-size:clamp(38px,8vw,70px);
+    color:#d94d82;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+.scroll-text{
+    margin-top:35px;
+    font-size:14px;
+    opacity:.65;
+    animation:bounce 2s infinite;
+}
+
+/* SECTIONS */
+.section-title{
+    font-size:34px;
+    color:#d94d82;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    margin-bottom:30px;
+    opacity:.75;
+}
+
+/* MUSIC */
+.music-box{
+    margin:25px 0;
+    padding:22px;
+    background:rgba(255,220,235,.6);
+    border-radius:22px;
+}
+
+.music-status{
+    margin-top:12px;
+    font-size:14px;
+    opacity:.7;
+}
+
+/* MEMORIES */
+.photo-frame{
+    position:relative;
+    width:min(520px,100%);
+    height:500px;
+    margin:25px auto;
+    border-radius:25px;
+    overflow:hidden;
+    background:#f5dce8;
+    box-shadow:0 15px 35px rgba(100,30,70,.2);
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.photo-caption{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.dots{
+    margin-top:18px;
+}
+
+.dot{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    margin:5px;
+    border-radius:50%;
+    background:#e8b2c9;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#d94d82;
+    transform:scale(1.3);
+}
+
+.memory-controls{
+    margin-top:20px;
+}
+
+.small-btn{
+    border:none;
+    background:#d94d82;
+    color:white;
+    padding:10px 18px;
+    margin:5px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+/* OUR STORY */
+
+.story{
+    position:relative;
+    max-width:700px;
+    margin:35px auto 10px;
+    text-align:left;
+}
+
+.story::before{
+    content:"";
+    position:absolute;
+    left:31px;
+    top:10px;
+    bottom:10px;
+    width:3px;
+    background:linear-gradient(to bottom,#ff9abb,#d94d82,#c77dff);
+    border-radius:10px;
+}
+
+.story-item{
+    position:relative;
+    display:flex;
+    gap:20px;
+    margin-bottom:28px;
+    animation:fadeUp .8s ease both;
+}
+
+.story-icon{
+    position:relative;
+    z-index:2;
+    min-width:65px;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    border-radius:50%;
+    font-size:28px;
+    box-shadow:0 6px 20px rgba(150,50,100,.15);
+    border:3px solid #ffe0ec;
+}
+
+.story-content{
+    flex:1;
+    background:rgba(255,255,255,.85);
+    padding:18px 20px;
+    border-radius:20px;
+    box-shadow:0 7px 20px rgba(100,30,70,.08);
+    transition:.3s;
+}
+
+.story-content:hover{
+    transform:translateX(6px);
+}
+
+.story-content h3{
+    color:#d94d82;
+    margin-bottom:8px;
+    font-size:19px;
+}
+
+.story-content p{
+    line-height:1.6;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+    .story::before{
+        left:27px;
+    }
+
+    .story-item{
+        gap:14px;
+    }
+
+    .story-icon{
+        min-width:55px;
+        width:55px;
+        height:55px;
+        font-size:23px;
+    }
+
+    .story-content{
+        padding:15px;
+    }
+}
+/* LETTER */
+
+.letter-card{
+    background:linear-gradient(135deg,#fff7fb,#fff,#f8efff);
+}
+
+.letter-envelope{
+    max-width:650px;
+    margin:30px auto 0;
+    padding:35px 25px;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 12px 35px rgba(100,30,70,.12);
+}
+
+.letter-icon{
+    font-size:65px;
+    margin-bottom:20px;
+    animation:float 3s infinite ease-in-out;
+}
+
+#letterContent{
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    text-align:left;
+    background:#fff7fb;
+    border-radius:20px;
+    animation:fadeUp 1s ease;
+}
+
+#letterContent h3{
+    color:#d94d82;
+    margin-bottom:15px;
+}
+
+#letterContent p{
+    line-height:1.8;
+    margin:14px 0;
+}
+/* POLAROID WALL */
+
+.polaroid-wall{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    max-width:700px;
+    margin:35px auto 10px;
+    padding:15px;
+}
+
+.polaroid{
+    background:white;
+    padding:12px 12px 20px;
+    border-radius:4px;
+    box-shadow:0 10px 25px rgba(70,30,60,.18);
+    transition:.4s;
+}
+
+.polaroid img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.polaroid p{
+    margin-top:14px;
+    font-family:cursive;
+    font-size:16px;
+    color:#555;
+}
+
+.p1{
+    transform:rotate(-4deg);
+}
+
+.p2{
+    transform:rotate(3deg);
+}
+
+.p3{
+    transform:rotate(4deg);
+}
+
+.p4{
+    transform:rotate(-3deg);
+}
+
+.polaroid:hover{
+    transform:rotate(0deg) translateY(-8px) scale(1.03);
+    z-index:5;
+}
+
+@media(max-width:600px){
+
+    .polaroid-wall{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .polaroid img{
+        height:280px;
+    }
+
+}
+/* REASONS */
+.reasons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:18px;
+    margin-top:30px;
+}
+
+.reason{
+    background:white;
+    padding:25px 15px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(100,30,70,.1);
+    transition:.3s;
+}
+
+.reason:hover{
+    transform:translateY(-7px);
+}
+
+.reason span{
+    font-size:35px;
+    display:block;
+    margin-bottom:12px;
+}
+
+.reason h3{
+    margin-bottom:8px;
+    color:#d94d82;
+}
+
+.reason p{
+    font-size:14px;
+    line-height:1.5;
+}
+/* LETTER */
+
+
+
+   
+/* SECRET */
+.secret-box{
+    margin-top:25px;
+    padding:25px;
+    background:linear-gradient(135deg,#fff,#fff0f6);
+    border-radius:22px;
+    min-height:100px;
+}
+
+#secretMessage{
+    display:none;
+    animation:fadeUp 1s ease;
+}
+
+#secretMessage p{
+    line-height:1.8;
+    margin:10px 0;
+}
+
+/* QUESTION */
+.question-box{
+    margin-top:25px;
+    padding:30px 20px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ffe2ef,#f1dcff);
+}
+
+.question-box h3{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.option{
+    border:none;
+    padding:12px 22px;
+    margin:7px;
+    border-radius:30px;
+    background:white;
+    color:#c94c7c;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#questionResult{
+    margin-top:20px;
+    font-weight:bold;
+    min-height:25px;
+}
+
+/* FINAL */
+.final-card{
+    background:linear-gradient(135deg,#fff,#ffe7f1);
+    box-shadow:0 20px 50px rgba(150,50,100,.18);
+}
+
+.final-card.zoom-in{
+    animation:finalZoom 1.2s ease both;
+}
+
+@keyframes finalZoom{
+
+    0%{
+        opacity:0;
+        transform:scale(.65);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.12);
+    }
+
+    75%{
+        transform:scale(.96);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.signature{
+    margin-top:25px;
+    font-size:20px;
+    color:#c94c7c;
+    font-weight:bold;
+    animation:float 3s infinite ease-in-out;
+}
+
+.final-card h2{
+    font-size:clamp(32px,7vw,55px);
+    color:#d94d82;
+    margin-bottom:20px;
+}
+
+.final-card p{
+    line-height:1.8;
+    margin:12px auto;
+    max-width:650px;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:20px;
+    color:#c94c7c;
+    font-weight:bold;
+}
+
+/* HEARTS */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    pointer-events:none;
+    animation:heartUp 5s linear forwards;
+    z-index:999;
+}
+
+/* CONFETTI */
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:9px;
+    height:14px;
+    z-index:2000;
+    animation:confettiFall 3s linear forwards;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+    opacity:.65;
+}
+
+/* ANIMATIONS */
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(8px)}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes heartUp{
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    .card{
+        padding:30px 17px;
+    }
+
+    .photo-frame{
+        height:430px;
+    }
+
+    .reasons{
+        grid-template-columns:1fr;
+    }
+}
+.one-more-card{
+    background:linear-gradient(135deg,#fff7fb,#fff,#f9efff);
+}
+
+.one-more-card .main-btn{
+    margin-top:20px;
+    animation:buttonGlow 2s infinite;
+}
+
+.final-card{
+    background:linear-gradient(135deg,#fff,#ffe7f1);
+    animation:finalAppear 1.2s ease;
+    box-shadow:0 20px 50px rgba(150,50,100,.18);
+}
+
+@keyframes finalAppear{
+    from{
+        opacity:0;
+        transform:scale(.70);
+    }
+
+    60%{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.final-message{
+    opacity:0;
+    transform:translateY(20px) scale(1);
+    transition:all 1s ease;
+}
+
+.final-message.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.main-btn{
+    max-width:100%;
+    box-sizing:border-box;
+}
+.final-note{
+    margin-top:20px;
+    font-size:15px;
+    font-style:italic;
+    opacity:.8;
+    animation:noteFade 2s ease;
+}
+
+@keyframes noteFade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:.8;
+        transform:translateY(0);
+    }
+}
+@media (max-width:600px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .card{
+        width:92%;
+        margin-left:auto;
+        margin-right:auto;
+        box-sizing:border-box;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .main-btn,
+    .option{
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+
+    .polaroid-wall{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .polaroid{
+        max-width:90%;
+    }
+
+}
+.polaroid{
+    transition:transform .4s ease, box-shadow .4s ease;
+    cursor:pointer;
+}
+
+.polaroid:hover{
+    transform:scale(1.06) rotate(0deg);
+    box-shadow:0 18px 40px rgba(0,0,0,.20);
+    z-index:5;
+}
+
+.polaroid img{
+    transition:transform .5s ease;
+}
+
+.polaroid:hover img{
+    transform:scale(1.03);
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div id="opening">
+    <h1>✨ Hey Garima ✨</h1>
+    <p id="openingText">
+    Something special has been created for you... ✨
+</p>
+    <button class="start-btn" onclick="startSurprise()">
+        Open Your Surprise 💌
+    </button>
+</div>
+
+
+<!-- HERO -->
+<section>
+    <div class="card hero">
+        <h1>Happy Birthday, Garima 🎂</h1>
+        <h2>A small website made specially for you ✨</h2>
+
+        <p>
+            This isn't just a birthday message.<br>
+            It's a little collection of moments, memories,
+            smiles and a few surprises. 💖
+        </p>
+
+        <div class="scroll-text">
+            ↓ Keep scrolling... there's more ↓
+        </div>
+    </div>
+</section>
+
+
+<!-- MUSIC -->
+<section>
+    <div class="card">
+        <h2 class="section-title">🎵 A Song For The Moment</h2>
+
+        <p class="section-subtitle">
+            Maybe this song will make this little surprise feel even more special.
+        </p>
+
+        <div class="music-box">
+            <button class="main-btn" id="musicButton">
+                🎵 Play Music
+            </button>
+
+            <div class="music-status" id="musicStatus">
+                Music will start from 1:32
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- MEMORIES -->
+<section>
+    <div class="card">
+        <h2 class="section-title">📸 Our Little Memories</h2>
+
+        <p class="section-subtitle">
+            Eight little moments, one after another.
+        </p>
+
+        <div class="photo-frame">
+            <img id="memoryPhoto" src="./photo01.jpg" alt="Memory">
+        </div>
+
+        <div class="photo-caption" id="photoCaption">
+            A beautiful memory ✨
+        </div>
+
+        <div class="dots" id="dots"></div>
+
+        <div class="memory-controls">
+            <button class="small-btn" onclick="previousPhoto()">← Previous</button>
+            <button class="small-btn" onclick="nextPhoto()">Next →</button>
+        </div>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section>
+    <div class="card">
+
+        <h2 class="section-title">💫 A Little Story</h2>
+
+        <p class="section-subtitle">
+            Some moments become memories without us even realizing it.
+        </p>
+
+        <div class="story">
+
+            <div class="story-item">
+                <div class="story-icon">✨</div>
+                <div class="story-content">
+                    <h3>It Started With A Moment</h3>
+                    <p>
+                        Sometimes the smallest moments end up becoming
+                        some of the most memorable ones.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-icon">🌸</div>
+                <div class="story-content">
+                    <h3>Then Came The Memories</h3>
+                    <p>
+                        Little conversations, random smiles and moments
+                        that slowly became worth remembering.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-icon">📸</div>
+                <div class="story-content">
+                    <h3>Moments Worth Keeping</h3>
+                    <p>
+                        And eventually, some of those moments found
+                        their way into these photographs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-icon">💖</div>
+                <div class="story-content">
+                    <h3>And Today...</h3>
+                    <p>
+                        It's your birthday, so I thought these memories
+                        deserved their own little place.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- LETTER -->
+<section>
+    <div class="card letter-card">
+
+        <h2 class="section-title">💌 A Little Letter For You</h2>
+
+        <p class="section-subtitle">
+            This one is a little more personal...
+        </p>
+
+        <div class="letter-envelope">
+
+            <div class="letter-icon">💌</div>
+
+            <button class="main-btn" id="letterButton" onclick="openLetter()">
+                Open The Letter ✨
+            </button>
+
+            <div id="letterContent">
+
+                <h3>Dear Garima,</h3>
+
+                <p>
+                    Today is your special day, and I wanted to do
+                    something a little different instead of sending
+                    just a normal birthday wish. 🎂
+                </p>
+
+                <p>
+                    So I put together these photos, memories,
+                    little messages and surprises into this small
+                    website.
+                </p>
+
+                <p>
+                    I hope when you go through it, you don't just
+                    see a website — I hope you see the time and
+                    effort behind it. ✨
+                </p>
+
+                <p>
+                    Keep smiling, keep enjoying the little moments,
+                    and keep making beautiful memories.
+                </p>
+
+                <p>
+                    Once again, wishing you a very Happy Birthday! 🌸
+                </p>
+
+                <h3>— With lots of good wishes 💖</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- POLAROID MEMORIES -->
+<section>
+    <div class="card">
+
+        <h2 class="section-title">📸 Little Pieces of Memories</h2>
+
+        <p class="section-subtitle">
+            Some moments deserve to stay a little longer. ✨
+        </p>
+
+        <div class="polaroid-wall">
+
+            <div class="polaroid p1">
+                <img src="./photo01.jpg" alt="Memory">
+                <p>A beautiful moment ✨</p>
+            </div>
+
+            <div class="polaroid p2">
+                <img src="./photo03.jpg" alt="Memory">
+                <p>Worth remembering 🌸</p>
+            </div>
+
+            <div class="polaroid p3">
+                <img src="./photo05.jpg" alt="Memory">
+                <p>A little happiness 💕</p>
+            </div>
+
+            <div class="polaroid p4">
+                <img src="./photo07.jpg" alt="Memory">
+                <p>One more memory 📷</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- REASONS -->
+<section>
+    <div class="card">
+        <h2 class="section-title">🌸 Little Things That Make You Special</h2>
+
+        <p class="section-subtitle">
+            Some things don't need a long explanation.
+        </p>
+
+        <div class="reasons">
+
+            <div class="reason">
+                <span>😊</span>
+                <h3>Your Smile</h3>
+                <p>Some smiles have a way of making an ordinary moment feel better.</p>
+            </div>
+
+            <div class="reason">
+                <span>✨</span>
+                <h3>Your Vibe</h3>
+                <p>You have your own little way of making moments memorable.</p>
+            </div>
+
+            <div class="reason">
+                <span>🌷</span>
+                <h3>Your Presence</h3>
+                <p>Sometimes simply being there makes a moment more meaningful.</p>
+            </div>
+
+            <div class="reason">
+                <span>💫</span>
+                <h3>Your Memories</h3>
+                <p>Some moments become special simply because they were shared.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SECRET MESSAGE -->
+<section>
+    <div class="card">
+        <h2 class="section-title">🔐 There's Something Hidden</h2>
+
+        <p class="section-subtitle">
+            You didn't think the website was finished already, did you? 👀
+        </p>
+
+        <div class="secret-box">
+
+            <button class="main-btn" id="secretButton" onclick="revealSecret()">
+                Unlock The Message 🔓
+            </button>
+
+            <div id="secretMessage">
+
+                <p>
+                    Every birthday deserves more than just a simple
+                    “Happy Birthday”. 🎂
+                </p>
+
+                <p>
+                    So I wanted to create something that could stay as
+                    a small digital memory — something you could open
+                    again and smile at. ✨
+                </p>
+
+                <p>
+                    And yes... this website took a little more effort
+                    than a normal birthday message. 😄
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- INTERACTIVE QUESTION -->
+<section>
+    <div class="card">
+        <h2 class="section-title">🎁 One Last Little Game</h2>
+
+        <div class="question-box">
+
+            <h3>
+                What do you think is waiting at the end? 👀
+            </h3>
+
+            <button class="option" onclick="answerQuestion('Maybe another surprise!')">
+                Another Surprise 🎁
+            </button>
+
+            <button class="option" onclick="answerQuestion('Definitely something special!')">
+                Something Special ✨
+            </button>
+
+            <button class="option" onclick="answerQuestion('You will have to keep going! 😄')">
+                I Don't Know 😄
+            </button>
+
+            <div id="questionResult"></div>
+
+          <br>
+
+<button class="main-btn" onclick="showFinalMessage()">
+    One More Thing 💖
+</button>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FINAL -->
+<section id="finalSection">
+    <div class="card final-card">
+
+        <h2>🎉 And Finally… 💖</h2>
+<div class="final-message" id="finalMessage"></div>
+        <p>
+            Happy Birthday once again, Garima! 🎂✨
+        </p>
+
+        <p>
+            I hope this little website brings a really big smile
+            to your face.
+        </p>
+
+        <p>
+            May your coming days be filled with happiness,
+            beautiful moments, new memories and lots of reasons
+            to smile. 🌸
+        </p>
+
+        <p>
+            And whenever you look back at these photos,
+            I hope they remind you of some good moments. 💕
+        </p>
+
+        <div class="signature">
+            Made with time, effort & memories ✨
+            <p class="final-note">
+    You made this little surprise worth creating. ✨
+</p>
+        </div>
+        </div>
+
+        <br>
+
+        <button class="main-btn" onclick="replayExperience()">
+            🔄 Replay This Surprise
+        </button>
+
+    </div>
+</section>
+
+
+<footer>
+    Made specially for Garima 🎂 | A little digital memory ✨
+</footer>
+
+
+<!-- AUDIO -->
+<audio id="birthdaySong" preload="metadata">
+    <source src="./song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+const opening = document.getElementById("opening");
+
+function startSurprise(){
+
+    opening.style.opacity = "0";
+
+    setTimeout(function(){
+        opening.style.display = "none";
+        createHearts();
+    },1000);
+}
+
+
+/* MUSIC */
+
+const song = document.getElementById("birthdaySong");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+
+musicButton.addEventListener("click", async function(){
+
+    try{
+
+        if(song.paused){
+
+            song.currentTime = 92;
+
+            await song.play();
+
+            musicButton.innerText = "⏸ Pause Music";
+            musicStatus.innerText = "Playing from 1:32 🎵";
+
+        }else{
+
+            song.pause();
+
+            musicButton.innerText = "🎵 Play Music";
+            musicStatus.innerText = "Music paused";
+
+        }
+
+    }catch(error){
+
+        console.log(error);
+
+        musicStatus.innerText =
+        "Music could not be played. Please check song.mp3";
+
+    }
+
+});
+
+
+song.addEventListener("ended",function(){
+
+    musicButton.innerText = "🎵 Play Music";
+    musicStatus.innerText = "Music finished 🎵";
+
+});
+
+
+/* PHOTOS */
+
+const photos = [
+    "./photo01.jpg",
+    "./photo02.jpg",
+    "./photo03.jpg",
+    "./photo04.jpg",
+    "./photo05.jpg",
+    "./photo06.jpg",
+    "./photo07.jpg",
+    "./photo08.jpg"
+];
+
+const captions = [
+
+    "A beautiful memory ✨",
+
+    "One more special moment 🌸",
+
+    "A memory worth keeping 💕",
+
+    "Some moments are simply special ✨",
+
+    "Another beautiful memory 💖",
+
+    "A little moment of happiness 🌷",
+
+    "Memories that bring a smile 😊",
+
+    "And one more for the memories ❤️"
+
+];
+
+
+let currentPhoto = 0;
+
+const memoryPhoto = document.getElementById("memoryPhoto");
+const photoCaption = document.getElementById("photoCaption");
+const dotsContainer = document.getElementById("dots");
+
+
+/* DOTS */
+
+photos.forEach(function(photo,index){
+
+    const dot = document.createElement("span");
+
+    dot.className = "dot";
+
+    dot.onclick = function(){
+        showPhoto(index);
+    };
+
+    dotsContainer.appendChild(dot);
+
+});
+
+
+function updateDots(){
+
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach(function(dot,index){
+
+        dot.classList.toggle(
+            "active",
+            index === currentPhoto
+        );
+
+    });
+
+}
+
+
+function showPhoto(index){
+
+    currentPhoto = index;
+
+    memoryPhoto.style.opacity = "0";
+    memoryPhoto.style.transform = "scale(1.04)";
+
+    setTimeout(function(){
+
+        memoryPhoto.src = photos[currentPhoto];
+
+        photoCaption.innerText =
+        captions[currentPhoto];
+
+        memoryPhoto.style.opacity = "1";
+        memoryPhoto.style.transform = "scale(1)";
+
+        updateDots();
+
+    },350);
+
+}
+
+
+function nextPhoto(){
+
+    currentPhoto++;
+
+    if(currentPhoto >= photos.length){
+        currentPhoto = 0;
+    }
+
+    showPhoto(currentPhoto);
+
+}
+
+
+function previousPhoto(){
+
+    currentPhoto--;
+
+    if(currentPhoto < 0){
+        currentPhoto = photos.length - 1;
+    }
+
+    showPhoto(currentPhoto);
+
+}
+
+
+updateDots();
+
+
+/* AUTO SLIDESHOW */
+
+setInterval(function(){
+
+    nextPhoto();
+
+},12000);
+
+
+/* SECRET */
+
+function revealSecret(){
+
+    const message =
+    document.getElementById("secretMessage");
+
+    const button =
+    document.getElementById("secretButton");
+
+    message.style.display = "block";
+
+    button.innerText = "Message Unlocked 💖";
+
+    button.disabled = true;
+
+    createHearts();
+
+}
+
+
+/* QUESTION */
+
+function answerQuestion(answer){
+
+    document.getElementById("questionResult").innerText =
+    answer + " 😄";
+
+}
+
+
+/* FINAL */
+
+function showFinalMessage() {
+
+    const finalSection = document.getElementById("finalSection");
+    const finalCard = document.querySelector(".final-card");
+    const finalMessage = document.getElementById("finalMessage");
+
+    finalSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    setTimeout(function() {
+
+        finalCard.classList.remove("zoom-in");
+
+        void finalCard.offsetWidth;
+
+        finalCard.classList.add("zoom-in");
+        setTimeout(function() {
+    finalMessage.classList.add("show");
+}, 500);
+
+        createHearts();
+        createConfetti();
+
+    }, 700);
+}
+
+
+/* REPLAY */
+
+function replayExperience(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    setTimeout(function(){
+
+        opening.style.display = "flex";
+        opening.style.opacity = "1";
+
+        currentPhoto = 0;
+        showPhoto(0);
+
+    },700);
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHearts(){
+
+    for(let i=0;i<12;i++){
+
+        setTimeout(function(){
+
+            const heart =
+            document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerText =
+            ["💖","💕","💗","✨","🌸"][Math.floor(Math.random()*5)];
+
+            heart.style.left =
+            Math.random()*100 + "vw";
+
+            heart.style.animationDuration =
+            (3 + Math.random()*3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            },6000);
+
+        },i*150);
+
+    }
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    for(let i=0;i<90;i++){
+
+        const piece =
+        document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+        Math.random()*100 + "vw";
+
+        piece.style.background =
+        ["#ff5c8a","#ffd166","#9b5de5",
+         "#00bbf9","#00f5d4"][Math.floor(Math.random()*5)];
+
+        piece.style.animationDelay =
+        Math.random()*1.5 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+            piece.remove();
+        },4500);
+
+    }
+
+}
+function openLetter() {
+    const letter = document.getElementById("letterContent");
+    const button = document.getElementById("letterButton");
+
+    letter.style.display = "block";
+
+    button.innerText = "Letter Opened 💖";
+    button.disabled = true;
+
+    createHearts();
+}
+</script>
+
+</body>
+</html>

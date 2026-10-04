@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0715;
+    color: white;
+    overflow-x: hidden;
+}
+
+.hero,
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero {
+    background:
+        radial-gradient(circle at top, #6b1d4f, transparent 45%),
+        linear-gradient(135deg, #160817, #2b0d25, #120713);
+}
+
+.section {
+    background:
+        radial-gradient(circle at center, #451735, transparent 50%),
+        #100812;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 45px 25px;
+}
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(45px, 10vw, 80px);
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+
+h2 {
+    font-size: clamp(32px, 7vw, 55px);
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+}
+
+.subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.message-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+button {
+    border: none;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: white;
+    color: #8b245e;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+.hidden {
+    display: none;
+}
+
+.memory-box {
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.photo-placeholder {
+    margin: 25px auto 5px;
+    max-width: 450px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 50px;
+}
+
+.photo-placeholder span {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
+.reason-card {
+    max-width: 550px;
+    margin: 18px auto;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.reason-card p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.heart {
+    font-size: 70px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-line {
+    font-size: 26px;
+    margin-top: 35px;
+    font-family: Georgia, serif;
+}
+
+.signature {
+    margin-top: 20px;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .message-text {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 14px 24px;
+    }
+}
